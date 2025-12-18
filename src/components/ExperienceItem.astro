@@ -12,6 +12,7 @@ export interface Props {
 }
 
 const { company, locationPeriod, role, points, achievements, href, logoSrc } = Astro.props;
+const hasIconSlot = Astro.slots.has('icon');
 ---
 
 <article class="mt-6">
@@ -19,12 +20,12 @@ const { company, locationPeriod, role, points, achievements, href, logoSrc } = A
 		<h3 class="text-lg font-medium">
 			{href ? (
 				<a href={href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:underline">
-					{logoSrc && <img src={logoSrc} alt="" class="h-5 w-5 rounded-sm object-contain" loading="lazy" />}
+					{hasIconSlot ? <slot name="icon" /> : (logoSrc && <img src={logoSrc} alt="" class="h-5 w-5 rounded-sm object-contain" loading="lazy" />)}
 					<span>{company}</span>
 				</a>
 			) : (
 				<span class="inline-flex items-center gap-2">
-					{logoSrc && <img src={logoSrc} alt="" class="h-5 w-5 rounded-sm object-contain" loading="lazy" />}
+					{hasIconSlot ? <slot name="icon" /> : (logoSrc && <img src={logoSrc} alt="" class="h-5 w-5 rounded-sm object-contain" loading="lazy" />)}
 					<span>{company}</span>
 				</span>
 			)}

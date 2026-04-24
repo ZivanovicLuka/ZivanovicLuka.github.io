@@ -9,14 +9,14 @@ import StreamflowIcon from '../components/icons/StreamflowIcon.astro';
 import AwardItem from '../components/AwardItem.astro';
 ---
 
-<BaseLayout title="Luka Živanović" description="Engineering Manager & Full‑Stack Developer">
+<BaseLayout title="Luka Živanović" description="Senior Software Engineer">
 	<Section id="summary" title="Summary" class="mt-0">
 		<p class="text-zinc-300">
-			Engineering Manager and full‑stack engineer with a strong background in computer science, teaching, and Web3
-			product delivery. Experienced in leading and scaling cross‑functional engineering teams, defining processes,
-			and driving technical direction across frontend, backend, and blockchain systems. Proven track record of
-			taking products from idea to production, mentoring and hiring engineers, and contributing hands‑on to complex
-			or high‑impact parts of the stack.
+			Senior software engineer with a strong background in computer science, teaching, and Web3 product delivery.
+			Experienced in leading and scaling cross‑functional engineering teams, defining processes, and driving
+			technical direction across frontend, backend, and blockchain systems. Proven track record of taking products
+			from idea to production, mentoring and hiring engineers, and contributing hands‑on to complex or high‑impact
+			parts of the stack.
 		</p>
 	</Section>
 
@@ -25,19 +25,6 @@ import AwardItem from '../components/AwardItem.astro';
 			If you’re looking for senior engineering support, to ship faster, reduce risk, or level up delivery, here are a few ways we can work together.
 		</p>
 		<div class="mt-6 grid gap-4 sm:grid-cols-2">
-			<article class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition-colors">
-				<h3 class="text-lg font-medium">Integration Support</h3>
-				<p class="mt-1 text-sm italic text-zinc-400">Best if: you’re integrating a third-party platform/SDK (payments, auth, web3, analytics) and want it done cleanly.</p>
-				<ul class="mt-3 list-disc space-y-1 pl-5 text-zinc-300">
-					<li>In-depth technical consultation (architecture, design, implementation)</li>
-					<li>End to end feature delivery (frontend, backend, integrations)</li>
-					<li>UX for critical flows (onboarding, checkout/claim, errors, recoveries)</li>
-					<li>Testing strategy + launch readiness</li>
-					<li>Production troubleshooting and performance tuning</li>
-				</ul>
-				<p class="mt-3 text-sm text-zinc-400">Outcome: a stable integration that’s easy to maintain and pleasant for users.</p>
-			</article>
-
 			<article class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition-colors">
 				<h3 class="text-lg font-medium">Consulting & Advisory</h3>
 				<p class="mt-1 text-sm italic text-zinc-400">Best if: you need a senior set of eyes for decisions and execution.</p>
@@ -61,26 +48,39 @@ import AwardItem from '../components/AwardItem.astro';
 				<p class="mt-3 text-sm text-zinc-400">Outcome: shipped work with high-quality handoff.</p>
 			</article>
 
-			<article class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition-colors">
-				<h3 class="text-lg font-medium">Hire Me (Full-time)</h3>
-				<p class="mt-1 text-sm italic text-zinc-400">Best if: you want a product-minded engineering manager who can drive delivery and build strong teams.</p>
-				<ul class="mt-3 list-disc space-y-1 pl-5 text-zinc-300">
-					<li>Execution + stakeholder alignment</li>
-					<li>Strong engineering practices (reviews, testing, reliability)</li>
-					<li>Team leadership, hiring, mentoring</li>
-					<li>Product delivery focus (shipping outcomes, not just output)</li>
-				</ul>
-				<p class="mt-3 text-sm text-zinc-400">Outcome: a leader who improves both the team and the product.</p>
-			</article>
 		</div>
 	</Section>
 
 	<Section id="experience" title="Experience">
 
 		<ExperienceItem
+			company="Intellya"
+			locationPeriod="Belgrade, Serbia · Mar. 2026 - Present"
+			role="Senior Software Engineer"
+			href="https://www.intellya.ai/"
+			logoSrc="/logos/intellya.svg"
+			points={[
+				'Leading frontend development of a visual builder for creating and automating AI workflows powering chatbots, primarily for banking clients.',
+				'Working in tight collaboration with the ML and product teams to translate model capabilities into usable, reliable product experiences.'
+			]}
+		/>
+
+		<ExperienceItem
+			company="Snark Health"
+			locationPeriod="Remote · Dec. 2025 - Present"
+			role="Consultant"
+			href="https://snarkhealth.com/"
+			logoSrc="/logos/snarkhealth.png"
+			points={[
+				'Optimized the codebase, product, and delivery processes to improve velocity and stability.',
+				'Set up best practices for using AI tools to accelerate day‑to‑day development without compromising code quality.'
+			]}
+		/>
+
+		<ExperienceItem
 			company="Streamflow Finance"
 			locationPeriod="Remote / Belgrade · Feb. 2023 - Dec. 2025"
-			role="Engineering Manager, ex. Frontend IC"
+			role="Engineering Manager, Software Engineer"
 			href="https://streamflow.finance"
 			points={[
 				'Led engineering for a multi‑chain token streaming, airdrop, and staking platform (primary focus on Solana).',

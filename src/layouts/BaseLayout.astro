@@ -4,7 +4,7 @@ export interface Props {
 	description?: string;
 }
 
-const { title = 'Luka Živanović', description = 'Engineering Manager & Full‑Stack Developer' } = Astro.props;
+const { title = 'Luka Živanović', description = 'Senior Software Engineer at Intellya' } = Astro.props;
 import '../styles/global.css';
 ---
 
@@ -39,8 +39,21 @@ import '../styles/global.css';
 						/>
 						<div class="transition-all">
 							<h1 id="site-title" class="text-xl font-semibold tracking-tight transition-all">Luka Živanović</h1>
-							<p id="site-subtitle" class="mt-1 text-sm text-zinc-300 transition-all">Engineering Manager & Full‑Stack Developer</p>
-                            <p id="site-subtitle" class="mt-0 text-xs text-zinc-400 transition-all">ex. Streamflow, Microsoft, University Teaching Assistant</p>
+							<p id="site-subtitle" class="mt-1 text-sm text-zinc-300 transition-all">
+								Senior Software Engineer at
+								<span class="inline-flex items-center gap-1 font-medium text-zinc-100">
+									<img src={`${import.meta.env.BASE_URL}logos/intellya.svg`} alt="" class="h-4 w-4" loading="lazy" decoding="async" />
+									<span>Intellya</span>
+								</span>
+							</p>
+                            <p id="site-subtitle" class="mt-0.5 text-xs text-zinc-400 transition-all">
+								<span class="text-zinc-500">ex.</span>
+								Engineering Manager <span class="text-zinc-500">@</span> Streamflow
+								<span class="mx-1 text-zinc-600">·</span>
+								Software Engineer <span class="text-zinc-500">@</span> Microsoft
+								<span class="mx-1 text-zinc-600">·</span>
+								University Teaching Assistant
+							</p>
 						</div>
 					</div>
 					<button
@@ -119,7 +132,7 @@ import '../styles/global.css';
 				</aside>
 			</div>
 		</main>
-		<footer id="site-footer" class="sticky bottom-0 z-40 border-t border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
+		<footer id="site-footer" class="border-t border-zinc-800">
 			<div class="mx-auto max-w-5xl px-4 py-6 text-xs text-zinc-400">
 				<p>Belgrade, Serbia · <a class="underline hover:text-zinc-200" href="mailto:lukazivanovic@gmail.com">lukazivanovic@gmail.com</a></p>
 			</div>
@@ -136,7 +149,6 @@ import '../styles/global.css';
 				const mobileBtn = document.getElementById('mobile-menu-button');
 				const mobileMenu = document.getElementById('mobile-menu');
 				const mobileOverlay = document.getElementById('mobile-overlay');
-				const footerEl = document.getElementById('site-footer');
 				if (!nav || !headerInner || !avatar || !title || !subtitle || !identity) return;
 				let openNavHeight = 0;
 				let isCollapsed = false;
@@ -145,12 +157,11 @@ import '../styles/global.css';
 				const positionMobileLayers = () => {
 					if (!mobileMenu || !mobileOverlay) return;
 					const headerH = headerInner.offsetHeight;
-					const footerH = footerEl ? footerEl.offsetHeight : 0;
-					const available = Math.max(0, window.innerHeight - headerH - footerH);
+					const available = Math.max(0, window.innerHeight - headerH);
 					mobileMenu.style.top = `${headerH}px`;
-					mobileMenu.style.bottom = `${footerH}px`;
+					mobileMenu.style.bottom = '0px';
 					mobileOverlay.style.top = `${headerH}px`;
-					mobileOverlay.style.bottom = `${footerH}px`;
+					mobileOverlay.style.bottom = '0px';
 					if (mobileBtn && mobileBtn.getAttribute('aria-expanded') === 'true') {
 						mobileMenu.style.maxHeight = `${available}px`;
 					}
@@ -245,12 +256,11 @@ import '../styles/global.css';
 					const openMobile = () => {
 						// set available height and positions
 						const headerH = headerInner.offsetHeight;
-						const footerH = footerEl ? footerEl.offsetHeight : 0;
-						const available = Math.max(0, window.innerHeight - headerH - footerH);
+						const available = Math.max(0, window.innerHeight - headerH);
 						mobileMenu.style.top = `${headerH}px`;
-						mobileMenu.style.bottom = `${footerH}px`;
+						mobileMenu.style.bottom = '0px';
 						mobileOverlay.style.top = `${headerH}px`;
-						mobileOverlay.style.bottom = `${footerH}px`;
+						mobileOverlay.style.bottom = '0px';
 						mobileMenu.style.maxHeight = `${available}px`;
 						mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
 						mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
